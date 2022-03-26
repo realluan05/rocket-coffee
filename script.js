@@ -1,15 +1,15 @@
 function openMenu(event)
 {
-    event.className = "btn-menu act";
-    document.body.className = "act";
-    document.querySelector("header nav").className = "act";
-    document.querySelector("header .container").className = "container act";
+    event.classList.add("act");
+    document.body.classList.add("act");
+    document.querySelector("header nav").classList.add("act");
+    document.querySelector("header .container").classList.add("act");
 }
 
 function closeMenu()
 {
-    document.body.className = "";
-    document.querySelector(".btn-menu").className = "btn-menu";
-    document.querySelector("header nav").className = "";
-    document.querySelector("header .container").className = "container";
+    document.body.classList.remove("act");
+    document.querySelector(".btn-menu").classList.remove("act");
+    document.querySelector("header nav").classList.remove("act");
+    document.querySelector("header .container").classList.remove("act");
 }

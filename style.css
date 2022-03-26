@@ -1,0 +1,261 @@
+:root {
+  --backgrond: #000;
+  --text-color: #FFF;
+  --button: #8257E5;
+  --border: #29292E;
+  --border-menu-mobile: #A8A8B3;
+  --text-color-menu-mobile: #E1E1E6;
+}
+
+* {
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--backgrond);
+  height: 100%;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background: url('./assets/images/blur-1.png') no-repeat;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 793px;
+  height: 572px;
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  background: url('./assets/images/blur-2.png') no-repeat;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 615px;
+  height: 700px;
+  z-index: -1;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: .3s;
+}
+
+a:hover {
+  color: var(--border-menu-mobile);
+}
+
+button {
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn {
+  border: 1px solid var(--button);
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 11px 38px;
+  transition: .3s;
+}
+
+.btn:hover {
+  background-color: var(--button);
+}
+
+h1, h2, span {
+  font-size: 80px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 109px;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.great-code, span {
+  color: var(--backgrond);
+  text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+}
+
+.container {
+  max-width: 950px;
+  padding: 30px;
+  margin: 0 auto;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0 30px;
+}
+
+main .container {
+  padding: 30px 30px 0;
+}
+
+@media (min-width: 768px) {
+  .btn-menu, .content-mobile, .btn-close-menu {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  body::before, body::after {
+    display: none;
+  }
+
+  body.act {
+    position: fixed;
+  }
+
+  section.content-desktop {
+    position: relative;
+  }
+
+  section.content-desktop::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 200px;
+    background: #8257E5;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(150px);
+  }
+
+  header .container {
+    border-bottom: 1px solid var(--border);
+  }
+
+  header .container.act {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    background-color: var(--backgrond);
+  }
+
+  header nav, header .btn {
+    display: none;
+  }
+
+  header nav {
+    position: fixed;
+    z-index: 5;
+    left: 0;
+    top: 94px;
+    width: 100%;
+    height: 100%;
+    background-color: var(--backgrond);
+  }
+
+  header nav > ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  header nav > ul > li {
+    padding: 15px 25px;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+
+  header nav > ul > li:first-child::before {
+    content: "";
+    height: 100%;
+    width: 5px;
+    background-color: var(--button);
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  header nav > ul > li:first-child > a {
+    font-size: 700;
+  }
+
+  header nav > ul > li:not(:first-child) > a {
+    color: var(--border-menu-mobile)
+  }
+
+  header nav.act {
+    display: block;
+  }
+
+  header .btn-menu.act {
+    display: none;
+  }
+
+  header .btn-menu.act + .btn-close-menu {
+    display: block;
+  }
+
+  .btn-close-menu {
+    display: none;
+  }
+
+  .content-mobile {
+    text-align: center;
+  }
+
+  .content-mobile > p {
+    margin: 90px 0;
+    font-size: 30px;
+  }
+
+  .content-mobile .btn {
+    margin: 0 auto 90px;
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+  }
+
+  h1, h2, span {
+    font-size: 50px;
+    line-height: 68px;
+    letter-spacing: -0.03em;
+  }
+
+  .great-code {
+    margin: 0 0 25px;
+  }
+}
